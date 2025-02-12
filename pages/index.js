@@ -10,12 +10,12 @@ export default function Home() {
 
   async function fetchData() {
     const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+    const APIKey = process.env.NEXT_PUBLIC_API_KEY;
     const options = {
       method: 'GET',
       headers: {
         accept: 'application/json',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YTY5NGE5ODRiZTJjMzlmNjg4NmZkNmVjOTA5ZDhiNyIsIm5iZiI6MTczMTY4NDkyNS43MTQsInN1YiI6IjY3Mzc2YTNkZDYzZmVkNTgyNmNmNTZkMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lUQlOfiPdTknmZjLfXt1Bp1vtflKHBYFIUrPUivLZAU',
+        Authorization: `Bearer ${APIKey}`,
       },
     };
     const response = await fetch(url, options);
