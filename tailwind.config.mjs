@@ -10,5 +10,8 @@ export default {
       colors: {},
     },
   },
+  daisyui: {
+    themes: ['cupcake', 'dark'],
+  },
   plugins: [require('daisyui')],
 };
