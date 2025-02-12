@@ -28,8 +28,8 @@ export default function Home() {
     <div className='mx-auto max-w-7xl py-8'>
       <h1 className='mb-8 text-2xl font-semibold'>Popular Movies</h1>
       <div className='flex flex-wrap justify-between gap-8'>
-        {popularMovies.map((movie) => (
-          <MediaCard media={movie} />
+        {popularMovies.map((movie, index) => (
+          <MediaCard key={index} media={movie} />
         ))}
       </div>
     </div>
