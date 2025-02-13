@@ -18,6 +18,7 @@ export default function Home() {
         Authorization: `Bearer ${APIKey}`,
       },
     };
+
     const response = await fetch(url, options);
     const data = await response.json();
     console.log('data', data);
@@ -25,12 +26,14 @@ export default function Home() {
   }
 
   return (
-    <div className='mx-auto max-w-7xl py-8'>
-      <h1 className='mb-8 text-2xl font-semibold'>Popular Movies</h1>
-      <div className='flex flex-wrap justify-between gap-8'>
-        {popularMovies.map((movie, index) => (
-          <MediaCard key={index} media={movie} />
-        ))}
+    <div className='p-8'>
+      <div className='mx-auto max-w-7xl'>
+        <h1 className='mb-8 text-2xl font-semibold'>Popular Movies</h1>
+        <div className='flex flex-wrap justify-between gap-8'>
+          {popularMovies.map((movie, index) => (
+            <MediaCard key={index} media={movie} />
+          ))}
+        </div>
       </div>
     </div>
   );
