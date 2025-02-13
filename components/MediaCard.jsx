@@ -6,7 +6,6 @@ export default function MediaCard({ media, type }) {
   return (
     <a
       href={type === 'movie' ? `/movie/${media.id}` : `/tv/${media.id}`}
-      target='_blank'
       className='flex w-full max-w-48 flex-col rounded-lg border border-base-300 bg-base-200 shadow-lg transition-[border-color] duration-100'
     >
       <img
