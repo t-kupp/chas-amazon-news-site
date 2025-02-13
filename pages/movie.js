@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 import MediaCard from '@/components/MediaCard';
 
 export default function Home() {
-  const [popularShows, setPopularShows] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
     fetchData();
   }, []);
 
   async function fetchData() {
-    const url = 'https://api.themoviedb.org/3/tv/popular?language=en-US&page=1';
-
+    const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
     const APIKey = process.env.NEXT_PUBLIC_API_KEY;
     const options = {
       method: 'GET',
@@ -23,16 +22,16 @@ export default function Home() {
     const response = await fetch(url, options);
     const data = await response.json();
     console.log('data', data);
-    setPopularShows(data.results);
+    setPopularMovies(data.results);
   }
 
   return (
     <div className='p-8'>
       <div className='mx-auto max-w-7xl'>
-        <h1 className='mb-8 text-2xl font-semibold'>Popular Shows</h1>
+        <h1 className='mb-8 text-2xl font-semibold'>Popular Movies</h1>
         <div className='flex flex-wrap justify-between gap-8'>
-          {popularShows.map((show, index) => (
-            <MediaCard key={index} media={show} type={'show'} />
+          {popularMovies.map((movie, index) => (
+            <MediaCard key={index} media={movie} type={'movie'} />
           ))}
         </div>
       </div>

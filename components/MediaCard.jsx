@@ -1,13 +1,13 @@
 import { FaRegHeart } from 'react-icons/fa';
 
-export default function MediaCard({ media }) {
-  console.log(media);
+export default function MediaCard({ media, type }) {
+  console.log('media', media);
 
   return (
     <a
-      href={`/media/${media.id}`}
+      href={type === 'movie' ? `/movie/${media.id}` : `/tv/${media.id}`}
       target='_blank'
-      className='flex w-full max-w-48 flex-col rounded-lg border bg-base-200 shadow-lg'
+      className='flex w-full max-w-48 flex-col rounded-lg border border-base-300 bg-base-200 shadow-lg transition-[border-color] duration-100'
     >
       <img
         className='min-h-[285px] rounded-t-lg'
@@ -20,7 +20,7 @@ export default function MediaCard({ media }) {
         <p className='text-sm opacity-80'>
           {media.release_date ? media.release_date : media.first_air_date}
         </p>
-        <button className='btn btn-circle btn-sm absolute bottom-0 right-0'>
+        <button className='btn btn-circle btn-sm absolute bottom-0 right-0 duration-0'>
           <FaRegHeart />
         </button>
       </div>

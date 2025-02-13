@@ -1,3 +1,5 @@
+import DetailPage from '@/components/DetailPage';
+
 export async function getStaticPaths() {
   const url = `https://api.themoviedb.org/3/movie/popular?language=en-US`;
   const APIKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -44,19 +46,6 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Media({ data }) {
-  console.log('data:', data); // Log data in the component
-
-  return (
-    <div>
-      {data ? (
-        <>
-          <h2>{data.title}</h2>
-          <p>Overview: {data.overview}</p>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
+export default function Movie({ data }) {
+  return <DetailPage media={data} type={'movie'} />;
 }
