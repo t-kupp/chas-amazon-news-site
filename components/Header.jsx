@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IoIosSearch } from 'react-icons/io';
+
 import ThemeButton from './ThemeButton';
 
 export default function Header() {
@@ -16,11 +16,11 @@ export default function Header() {
           <Link href={'/tv'}>
             <span className='link-hover link'>TV Shows</span>
           </Link>
+          <Link href={'/search'}>
+            <span className='link-hover link'>Search</span>
+          </Link>
         </div>
         <div className='flex items-center gap-2'>
-          <button className='btn btn-circle btn-ghost btn-sm'>
-            <IoIosSearch size={20} />
-          </button>
           <ThemeButton />
           <Link href={'/watchlist'}>
             <span className='link-hover link ml-2'>My Watchlist</span>
