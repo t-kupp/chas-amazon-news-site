@@ -1,9 +1,11 @@
 import { FaRegHeart } from 'react-icons/fa';
 
 export default function MediaCard({ media }) {
+  console.log(media);
+
   return (
     <a
-      href='/'
+      href={`/media/${media.id}`}
       target='_blank'
       className='flex w-full max-w-48 flex-col rounded-lg border bg-base-200 shadow-lg'
     >
