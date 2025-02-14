@@ -68,8 +68,8 @@ export default function Search() {
         </label>
         {loading && <span className='loading loading-spinner loading-lg'></span>}
         <div className='flex w-full max-w-3xl flex-col items-start gap-8'>
-          {results.map((media) => (
-            <SearchResultCard media={media} type={media.media_type} />
+          {results.map((media, index) => (
+            <SearchResultCard key={index} media={media} type={media.media_type} />
           ))}
         </div>
       </div>
