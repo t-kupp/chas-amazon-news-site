@@ -16,18 +16,18 @@ export async function getStaticPaths() {
 
   if (!data.results) {
     console.error('No results found in API response:', data);
-    return { paths: [], fallback: false };
+    return { paths: [], fallback: 'blocking' };
   }
 
   const paths = data.results.map((movie) => ({
     params: { movieId: movie.id.toString() },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {
-  const url = `https://api.themoviedb.org/3/movie/${params.movieId}?language=en-US}`;
+  const url = `https://api.themoviedb.org/3/movie/${params.movieId}?language=en-US`;
   const APIKey = process.env.NEXT_PUBLIC_API_KEY;
   const options = {
     method: 'GET',

@@ -16,14 +16,14 @@ export async function getStaticPaths() {
 
   if (!data.results) {
     console.error('No results found in API response:', data);
-    return { paths: [], fallback: false };
+    return { paths: [], fallback: 'blocking' };
   }
 
   const paths = data.results.map((tv) => ({
     params: { tvId: tv.id.toString() },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {

@@ -4,9 +4,9 @@ import ThemeButton from './ThemeButton';
 
 export default function Header() {
   return (
-    <div className='navbar bg-base-200 px-8 font-semibold shadow'>
+    <div className='navbar bg-slate-800 px-8 font-semibold text-slate-200 shadow'>
       <div className='mx-auto flex w-full max-w-7xl justify-between'>
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-8'>
           <Link href={'/'}>
             <span className='link-hover link'>Home</span>
           </Link>

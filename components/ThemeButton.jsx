@@ -3,19 +3,27 @@ import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 
 export default function ThemeButton() {
   const [theme, setTheme] = useState('');
+
   useEffect(() => {
-    // Set data-theme to system theme on page load
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
-    document.documentElement.setAttribute('data-theme', systemTheme);
-    setTheme(systemTheme);
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      setTheme(savedTheme);
+    } else {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+      document.documentElement.setAttribute('data-theme', systemTheme);
+      setTheme(systemTheme);
+    }
   }, []);
 
   function toggleTheme() {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    setTheme(isDark ? 'light' : 'dark');
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
   }
 
   return (
