@@ -14,14 +14,11 @@ export default function MediaCard({ media, type }) {
         alt={`Poster of ${media.title ? media.title : media.name}`}
       />
 
-      <div className='relative flex h-full flex-col justify-between p-2'>
+      <div className='flex h-full flex-col justify-between p-2'>
         <p className='line-clamp-2 font-bold'>{media.title ? media.title : media.name}</p>
         <p className='mt-1 text-sm opacity-80'>
           {media.release_date ? media.release_date : media.first_air_date}
         </p>
-        <button className='btn btn-circle btn-sm absolute bottom-0 right-0 duration-0'>
-          <FaRegHeart />
-        </button>
       </div>
     </a>
   );
