@@ -1,8 +1,6 @@
 import { FaRegHeart } from 'react-icons/fa';
 
 export default function MediaCard({ media, type }) {
-  console.log('media', media);
-
   return (
     <a
       href={type === 'movie' ? `/movie/${media.id}` : `/tv/${media.id}`}
