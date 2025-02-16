@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <>
-      <div className='navbar bg-slate-800 px-8 font-semibold text-slate-200 shadow'>
+      <div className='navbar px-8 font-semibold shadow'>
         <div className='mx-auto flex w-full max-w-7xl justify-between'>
           <div className='lg:hidden'>
             <button onClick={() => setIsMobil(!isMobil)} className='btn btn-ghost text-xl'>

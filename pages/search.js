@@ -62,7 +62,7 @@ export default function Search() {
           <input
             type='text'
             className='grow'
-            placeholder='Search...'
+            placeholder='Search for movies or TV shows...'
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </label>
