@@ -1,30 +1,7 @@
-import { useEffect, useState } from 'react';
 import MediaCard from '@/components/MediaCard';
 
-export default function Home() {
-  const [popularMovies, setPopularMovies] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  async function fetchData() {
-    const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
-    const APIKey = process.env.NEXT_PUBLIC_API_KEY;
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${APIKey}`,
-      },
-    };
-
-    
-    const response = await fetch(url, options);
-    const data = await response.json();
-    console.log('data', data);
-    setPopularMovies(data.results);
-  }
+export default function Home({ popularMovies }) {
+  console.log('popularMovies:', popularMovies);
 
   return (
     <div className='p-8'>
@@ -38,4 +15,23 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+  const APIKey = process.env.NEXT_PUBLIC_API_KEY;
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${APIKey}`,
+    },
+  };
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  return {
+    props: { popularMovies: data.results || [] },
+  };
 }
