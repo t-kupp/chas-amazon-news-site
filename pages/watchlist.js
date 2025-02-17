@@ -14,11 +14,12 @@ export default function Watchlist() {
         ) : (
           <div className='grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
             {watchlist.map((media) => (
-              <div key={media.id} className='relative'>
+              <div key={media.id} className='flex flex-col items-center'>
+                {/* Movie Card */}
                 <MediaCard media={media} type={media.type} />
                 <button
                   onClick={() => removeFromWatchlist(media.id)}
-                  className='absolute right-2 top-2 rounded-full bg-red-500 p-1 text-sm text-white'
+                  className='mt-2 w-full rounded-lg bg-red-500 py-2 text-white hover:bg-red-600 transition duration-300'
                 >
                   Remove
                 </button>
