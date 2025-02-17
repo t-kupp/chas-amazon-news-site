@@ -22,21 +22,21 @@ export default function Header() {
                 MediaDB
               </span>
             </Link>
-            <Link href={'/movie'}>
-              <span className='link-hover link'>Movies</span>
-            </Link>
-            <Link href={'/tv'}>
-              <span className='link-hover link'>TV Shows</span>
-            </Link>
-            <Link href={'/search'}>
-              <span className='link-hover link'>Search</span>
-            </Link>
+            <div className='link-hover link'>
+              <Link href={'/movie'}>Movies</Link>
+            </div>
+            <div className='link-hover link'>
+              <Link href={'/tv'}>TV Shows</Link>
+            </div>
+            <div className='link-hover link'>
+              <Link href={'/search'}>Search</Link>
+            </div>
           </div>
           <div className='flex items-center gap-2'>
             <ThemeButton />
-            <Link href={'/watchlist'}>
-              <span className='link-hover link ml-2'>My Watchlist</span>
-            </Link>
+            <div className='link-hover link ml-2'>
+              <Link href={'/watchlist'}>My Watchlist</Link>
+            </div>
           </div>
         </div>
       </div>
