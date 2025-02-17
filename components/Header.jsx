@@ -18,7 +18,9 @@ export default function Header() {
           </div>
           <div className='hidden items-center gap-8 lg:flex'>
             <Link href={'/'}>
-              <span className='link-hover link'>Home</span>
+              <span className='bg-gradient-to-r from-[#FC5C7D] to-[#6A82FB] bg-clip-text text-2xl font-bold tracking-tight text-transparent drop-shadow-sm'>
+                MediaDB
+              </span>
             </Link>
             <Link href={'/movie'}>
               <span className='link-hover link'>Movies</span>
