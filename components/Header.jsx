@@ -9,13 +9,12 @@ export default function Header() {
 
   return (
     <>
-      <div className='bg-slate-900 navbar text-white gipx-8 font-semibold shadow'>
+      <div className='navbar bg-base-200 font-semibold shadow'>
         <div className='mx-auto flex w-full max-w-7xl justify-between'>
           <div className='lg:hidden'>
             <button onClick={() => setIsMobil(!isMobil)} className='btn btn-ghost text-xl'>
               <RxHamburgerMenu />
             </button>
-          
           </div>
           <div className='hidden items-center gap-8 lg:flex'>
             <Link href={'/'}>
