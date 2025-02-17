@@ -8,7 +8,7 @@ export default function Watchlist() {
   return (
     <div className='p-8'>
       <div className='mx-auto max-w-7xl'>
-        <h1 className='mb-8 text-3xl font-semibold'>My Watchlist</h1>
+        <h1 className='mb-8 text-2xl font-semibold'>My Watchlist</h1>
         {watchlist.length === 0 ? (
           <p className='text-center text-lg'>Your watchlist is empty.</p>
         ) : (
@@ -18,7 +18,7 @@ export default function Watchlist() {
                 <MediaCard media={media} type={media.media_type} />
                 <button
                   onClick={() => removeFromWatchlist(media.id)}
-                  className='absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full text-sm'
+                  className='absolute right-2 top-2 rounded-full bg-red-500 p-1 text-sm text-white'
                 >
                   Remove
                 </button>

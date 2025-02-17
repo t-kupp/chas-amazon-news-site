@@ -18,9 +18,8 @@ export default function SearchResultCard({ media, type }) {
         <h1 className='font-bold'>{type === 'movie' ? media.title : media.name}</h1>
         <div className='mb-2 flex items-center opacity-75'>
           <p>
-            {type === 'movie'
-              ? media.release_date && media.release_date.slice(0, 4) + ' • Movie'
-              : media.first_air_date && media.first_air_date.slice(0, 4) + ' • TV Show'}
+            {media.release_date && media.release_date.slice(0, 4) + ' • Movie'}
+            {media.first_air_date && media.first_air_date.slice(0, 4) + ' • TV Show'}
           </p>
         </div>
         <p className='line-clamp-2 text-sm'>{media.overview}</p>
