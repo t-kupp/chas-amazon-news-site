@@ -15,7 +15,7 @@ export default function Watchlist() {
           <div className='grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
             {watchlist.map((media) => (
               <div key={media.id} className='relative'>
-                <MediaCard media={media} type={media.media_type} />
+                <MediaCard media={media} type={media.type} />
                 <button
                   onClick={() => removeFromWatchlist(media.id)}
                   className='absolute right-2 top-2 rounded-full bg-red-500 p-1 text-sm text-white'
